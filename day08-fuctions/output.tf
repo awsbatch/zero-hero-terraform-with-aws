@@ -9,3 +9,7 @@ output "port-list" {
 output "sg-rules-lists" {
   value = local.sg_rules
 }
+
+output "instance_size" {
+  value = local.instance-size-by-env
+}

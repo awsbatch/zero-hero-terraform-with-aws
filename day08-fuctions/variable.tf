@@ -35,3 +35,15 @@ variable "Evn-based-tags" {
 variable "allowd-ports" {
   default = "22,80,443,8080,3306"
 }
+
+variable "instance_sizes" {
+  default = {
+    dev = "t2.micro"
+    prod = "t3.medium"
+    test = "t2.small"
+  }
+}
+
+variable "environment" {
+  default = "dev"
+}

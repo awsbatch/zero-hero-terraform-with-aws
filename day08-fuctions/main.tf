@@ -23,6 +23,10 @@ locals {
   ]
 }
 
+locals {
+  instance-size-by-env = lookup(var.instance_sizes, var.environment, "t2.micro")
+}
+
 #resource "aws_s3_bucket" "my_bucket" {
 #  bucket = local.formated_name
 #  tags = {
