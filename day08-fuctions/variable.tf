@@ -47,3 +47,19 @@ variable "instance_sizes" {
 variable "environment" {
   default = "dev"
 }
+
+# This variable is used to demonstrate validation rules for instance types
+
+variable "instance-type" {
+  default = "t3.2xlarge"
+
+  validation {
+    condition = length(var.instance-type) >= 2 && length(var.instance-type) <= 10
+    error_message = "The instance type must be between 2 and 10 characters long."
+  }
+
+  validation {
+    condition = can(regex("^t[2,3]\\.", var.instance-type))
+    error_message = "Instance type must start with t2 or t3"
+  }
+}

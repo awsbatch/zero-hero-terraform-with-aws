@@ -10,6 +10,10 @@ output "sg-rules-lists" {
   value = local.sg_rules
 }
 
-output "instance_size" {
-  value = local.instance-size-by-env
-}
+#output "instance_size" {
+#  value = local.instance-size-by-env
+#}
+#
+#output "validation-rules" {
+#  value = var.instance-type
+#}
