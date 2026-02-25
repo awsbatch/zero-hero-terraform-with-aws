@@ -27,6 +27,13 @@ locals {
   instance-size-by-env = lookup(var.instance_sizes, var.environment, "t2.micro")
 }
 
+#concat example
+locals {
+  locations = concat(var.all-locations,var.default-locations)
+  unique-locations = toset(local.locations)  # to remove duplicate values from the list of locations
+
+}
+
 #resource "aws_s3_bucket" "my_bucket" {
 #  bucket = local.formated_name
 #  tags = {

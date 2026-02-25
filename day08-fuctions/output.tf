@@ -17,3 +17,11 @@ output "sg-rules-lists" {
 #output "validation-rules" {
 #  value = var.instance-type
 #}
+
+output "all-location" {
+  value = local.locations
+}
+
+output "unique" {
+  value = local.unique-locations
+}

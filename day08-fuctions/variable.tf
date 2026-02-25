@@ -63,3 +63,11 @@ variable "instance-type" {
     error_message = "Instance type must start with t2 or t3"
   }
 }
+
+variable "all-locations" {
+  default = ["us-east-1", "us-west-2", "us-west-2", "ap-southeast-1"]
+}
+
+variable "default-locations" {
+  default = ["us-east-1"]
+}
